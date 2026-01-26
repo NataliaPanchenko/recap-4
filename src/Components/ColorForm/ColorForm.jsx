@@ -1,6 +1,6 @@
 import "./ColorForm.css";
 import { useState } from "react";
-import ColorInput from "../../ColorInput/ColorInput";
+import ColorInput from "../ColorInput/ColorInput";
 
 export default function ColorForm({ onAddColor, initialData }) {
   const [inputValue, setInputValue] = useState(initialData);

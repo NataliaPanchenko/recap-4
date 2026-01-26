@@ -18,18 +18,25 @@ function App() {
     setColors((prevColors) => [{ id: uid(), ...newColor }, ...prevColors]);
   }
 
+  function handleDeleteColor(id) {
+    setColors((prevColors) => prevColors.filter((color) => color.id !== id));
+  }
+
   return (
     <>
       <h1>Theme Creator</h1>
       <ColorForm initialData={INITIAL_DATA} onAddColor={handleAddColor} />
       {colors.map((color) => (
         <Color
+          id={color.id}
           key={color.id}
           color={color.hex}
           role={color.role}
           contrast={color.contrastText}
+          onDelete={handleDeleteColor}
         />
       ))}
+      {colors.length === 0 && <p>No colors... Start by adding one! 🎨</p>}
     </>
   );
 }
