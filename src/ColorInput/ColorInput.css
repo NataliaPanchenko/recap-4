@@ -1,0 +1,5 @@
+.color-input {
+    max-width: 170px;
+    display: flex;
+    flex-direction: row;
+}
