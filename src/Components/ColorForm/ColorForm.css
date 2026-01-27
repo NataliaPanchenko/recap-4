@@ -10,9 +10,14 @@ input {
 }
 
 button {
-    max-width: 110px;
+    max-width: 140px;
     margin-top: 5px;
     background-color: #ffff;
     color: #000000;
     font-size: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color:lightgray;
 }

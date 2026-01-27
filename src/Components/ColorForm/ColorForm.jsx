@@ -2,12 +2,12 @@ import "./ColorForm.css";
 import { useState } from "react";
 import ColorInput from "../ColorInput/ColorInput";
 
-export default function ColorForm({ onAddColor, initialData }) {
+export default function ColorForm({ onSubmit, initialData, buttonText }) {
   const [inputValue, setInputValue] = useState(initialData);
 
   function handleSubmit(e) {
     e.preventDefault();
-    onAddColor(inputValue);
+    onSubmit(inputValue);
     setInputValue(inputValue);
   }
 
@@ -26,6 +26,7 @@ export default function ColorForm({ onAddColor, initialData }) {
         name="role"
         className="role-input"
         id="role"
+        aria-label="role input"
         value={inputValue.role}
         onChange={(e) => handleChange("role", e.target.value)}
       />
@@ -43,8 +44,7 @@ export default function ColorForm({ onAddColor, initialData }) {
         value={inputValue.contrastText}
         onChange={(value) => handleChange("contrastText", value)}
       />
-
-      <button type="submit">ADD COLOR</button>
+      <button type="submit">{buttonText}</button>
     </form>
   );
 }

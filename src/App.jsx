@@ -22,10 +22,22 @@ function App() {
     setColors((prevColors) => prevColors.filter((color) => color.id !== id));
   }
 
+  function handleUpdateColor(updatedColor) {
+    setColors((prevColors) =>
+      prevColors.map((color) =>
+        color.id === updatedColor.id ? updatedColor : color,
+      ),
+    );
+  }
+
   return (
     <>
       <h1>Theme Creator</h1>
-      <ColorForm initialData={INITIAL_DATA} onAddColor={handleAddColor} />
+      <ColorForm
+        initialData={INITIAL_DATA}
+        onSubmit={handleAddColor}
+        buttonText="ADD COLOR"
+      />
       {colors.map((color) => (
         <Color
           id={color.id}
@@ -34,6 +46,7 @@ function App() {
           role={color.role}
           contrast={color.contrastText}
           onDelete={handleDeleteColor}
+          onUpdateColor={handleUpdateColor}
         />
       ))}
       {colors.length === 0 && <p>No colors... Start by adding one! 🎨</p>}
