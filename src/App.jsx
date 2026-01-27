@@ -46,7 +46,7 @@ function App() {
           role={color.role}
           contrast={color.contrastText}
           onDelete={handleDeleteColor}
-          onEditColor={handleUpdateColor}
+          onUpdateColor={handleUpdateColor}
         />
       ))}
       {colors.length === 0 && <p>No colors... Start by adding one! 🎨</p>}

@@ -8,7 +8,7 @@ export default function Color({
   role,
   contrast,
   onDelete,
-  onEditColor: onUpdateColor,
+  onUpdateColor,
 }) {
   const [showDelete, setShowDelete] = useState(false);
   const [showEdit, setShowEdit] = useState(false);
