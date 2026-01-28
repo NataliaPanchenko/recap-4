@@ -34,23 +34,27 @@ function App() {
 
   return (
     <>
-      <h1>Theme Creator</h1>
+      <h1 className="header">Theme Creator</h1>
       <ColorForm
         initialData={INITIAL_DATA}
         onSubmit={handleAddColor}
         buttonText="ADD COLOR"
+        className="add__color button"
       />
-      {colors.map((color) => (
-        <Color
-          id={color.id}
-          key={color.id}
-          color={color.hex}
-          role={color.role}
-          contrast={color.contrastText}
-          onDelete={handleDeleteColor}
-          onUpdateColor={handleUpdateColor}
-        />
-      ))}
+      <div className="colors-container">
+        {colors.map((color) => (
+          <Color
+            id={color.id}
+            key={color.id}
+            color={color.hex}
+            role={color.role}
+            contrast={color.contrastText}
+            onDelete={handleDeleteColor}
+            onUpdateColor={handleUpdateColor}
+          />
+        ))}
+      </div>
+
       {colors.length === 0 && <p>No colors... Start by adding one! 🎨</p>}
     </>
   );

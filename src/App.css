@@ -1,8 +1,42 @@
+:root {
+  --bg-color: #f8f9fa;
+  --border-color: rgb(143, 143, 143);
+  --main-color: #ffffff;
+  --primary-color: #000000;
+  --hover-color: rgb(62, 62, 62);
+}
+
 body {
-  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   padding: 10px;
+  background-color: var(--bg-color);
+}
+
+.header {
+  text-align: center;
+  font-size: 38px;
+}
+
+.colors-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 10px;
+}
+
+.colors-container button {
+  padding: 4px 10px;
+  border-radius: 6px;
+  background-color: var(--primary-color);
+  color: var(--main-color);
+  border-radius: 20px;
+  margin-right: 10px;
+}
+
+.colors-container button:hover {
+  background: var(--hover-color);
 }
 
 p {
-  margin-left: 5px;
+  margin: 10px;
+  font-weight: 600;
 }
