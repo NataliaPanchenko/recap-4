@@ -4,6 +4,7 @@
   --main-color: #ffffff;
   --primary-color: #000000;
   --hover-color: rgb(62, 62, 62);
+  --successfully-button-color: rgb(0, 206, 21);
 }
 
 body {
@@ -29,14 +30,18 @@ body {
   background-color: var(--primary-color);
   color: var(--main-color);
   border-radius: 20px;
-  margin-right: 10px;
 }
 
 .colors-container button:hover {
   background: var(--hover-color);
 }
 
+.colors-container button.button-successfully:hover {
+    background-color: var(--primary-color);
+}
+
 p {
   margin: 10px;
   font-weight: 600;
 }
+
