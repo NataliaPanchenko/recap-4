@@ -1,6 +1,7 @@
 import ColorForm from "../ColorForm/ColorForm";
 import "./Color.css";
 import { useState } from "react";
+import CopyToClipboard from "../CopyToClipboard/CopyToClipboard";
 
 export default function Color({
   id,
@@ -17,13 +18,13 @@ export default function Color({
     onUpdateColor({ ...updatedColor, id });
     setShowEdit(false);
   }
-
   return (
     <div
       className="color-card"
       style={{ backgroundColor: color, color: contrast }}
     >
       <h2 className="color-card-headline">{color}</h2>
+      <CopyToClipboard value={color} />
       <p className="color-card-role">{role}</p>
       <p>contrast: {contrast}</p>
       {!showDelete && (
