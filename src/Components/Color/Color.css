@@ -1,22 +1,35 @@
 .color-card {
   margin: 0px 10px;
-  padding: 5px;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 5px 10px 10px var(--border-color);
+}
+
+.color-card .form-container {
+    max-width: 250px;
+    padding: 10px;
+    gap: 0;
 }
 
 .color-card-headline {
   display: inline;
-  padding: 2px 6px;
-  background: black;
-  color: white;
+  padding: 4px 10px;
+  background: var(--primary-color);
+  color: var(--main-color);
+  border-radius: 20px;
+  font-size: 1.1rem;
 }
 
 .color-card-highlight {
   display: inline;
   padding: 2px 6px;
-  background: black;
-  color: white;
+  background: var(--primary-color);
+  color: var(--main-color);
 }
 
 .color-card-role {
   font-weight: 600;
+  margin-top: 10px;
 }
+
+

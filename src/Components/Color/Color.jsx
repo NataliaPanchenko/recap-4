@@ -27,14 +27,24 @@ export default function Color({
       <p className="color-card-role">{role}</p>
       <p>contrast: {contrast}</p>
       {!showDelete && (
-        <button onClick={() => setShowDelete(true)}>DELETE</button>
+        <button className="button" onClick={() => setShowDelete(true)}>
+          DELETE
+        </button>
       )}
-      {!showEdit && <button onClick={() => setShowEdit(true)}>EDIT</button>}
+      {!showEdit && (
+        <button className="button" onClick={() => setShowEdit(true)}>
+          EDIT
+        </button>
+      )}
       {showDelete && (
         <>
           <p className="color-card-highlight">Really delete?</p>
-          <button onClick={() => setShowDelete(false)}>Cancel</button>
-          <button onClick={() => onDelete(id)}>Delete</button>
+          <button className="button" onClick={() => setShowDelete(false)}>
+            Cancel
+          </button>
+          <button className="button" onClick={() => onDelete(id)}>
+            Delete
+          </button>
         </>
       )}
       {showEdit && (
@@ -47,6 +57,7 @@ export default function Color({
             }}
             buttonText="UPDATE COLOR"
             onSubmit={handleUpdateSubmit}
+            className="update__color button"
           />
           <button onClick={() => setShowEdit(false)}>CANCEL</button>
         </>
