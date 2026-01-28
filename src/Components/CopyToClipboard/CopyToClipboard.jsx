@@ -1,28 +1,34 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./CopyToClipboard.css";
 
 export default function CopyToClipboard({ value }) {
-  const [text, setText] = useState("COPY");
-  const isCopied = text === "SUCCESSFULLY COPIED";
+  const [isCopied, setIsCopied] = useState(false);
 
   async function handleCopyText() {
     try {
       await navigator.clipboard.writeText(value);
-      setText("SUCCESSFULLY COPIED");
-
-      setTimeout(() => {
-        setText("COPY");
-      }, 3000);
-    } catch (error) {
-      console.error(error.message);
+      setIsCopied(true);
+    } catch (e) {
+      console.log(e.message);
     }
   }
+
+  useEffect(() => {
+    if (!isCopied) return;
+
+    const timeout = setTimeout(() => {
+      setIsCopied(false);
+    }, 3000);
+
+    return () => clearTimeout(timeout);
+  }, [isCopied]);
+
   return (
     <button
       className={isCopied ? "button-successfully" : ""}
       onClick={handleCopyText}
     >
-      {text}
+      {isCopied ? "SUCCESSFULLY COPIED" : "COPY"}
     </button>
   );
 }
