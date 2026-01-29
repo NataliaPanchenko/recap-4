@@ -25,11 +25,14 @@
   padding: 2px 6px;
   background: var(--primary-color);
   color: var(--main-color);
+  border-radius: 5px;
 }
 
 .color-card-role {
   font-weight: 600;
-  margin-top: 10px;
 }
 
-
+p {
+  margin-left: 5px;
+  padding: 0;
+}

@@ -55,7 +55,11 @@ function App() {
         ))}
       </div>
 
-      {colors.length === 0 && <p>No colors... Start by adding one! 🎨</p>}
+      {colors.length === 0 && (
+        <p className="no-colors__message">
+          No colors... Start by adding one! 🎨
+        </p>
+      )}
     </>
   );
 }

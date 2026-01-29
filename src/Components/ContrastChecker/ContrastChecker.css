@@ -1,0 +1,18 @@
+.contrast {
+    max-width: 225px;
+    border-radius: 5px;
+    padding: 1px 4px;
+    margin-top: 5px;
+}
+
+.yup {
+    background-color: var(--contrast-good-color);
+}
+
+.kinda {
+    background-color: var(--contrast-warning-color);
+}
+
+.nope {
+    background-color: var(--contrast-bad-color);
+}
