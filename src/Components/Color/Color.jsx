@@ -5,7 +5,6 @@ import CopyToClipboard from "../CopyToClipboard/CopyToClipboard";
 import ContrastChecker from "../ContrastChecker/ContrastChecker";
 
 export default function Color({
-  key,
   id,
   color,
   role,
