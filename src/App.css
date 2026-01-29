@@ -4,7 +4,9 @@
   --main-color: #ffffff;
   --primary-color: #000000;
   --hover-color: rgb(62, 62, 62);
-  --successfully-button-color: rgb(0, 206, 21);
+  --contrast-good-color: rgb(0, 206, 21);
+  --contrast-warning-color: rgb(255, 111, 0);
+  --contrast-bad-color: rgb(233, 15, 15);
 }
 
 body {
@@ -40,8 +42,9 @@ body {
     background-color: var(--primary-color);
 }
 
-p {
-  margin: 10px;
+.no-colors__message {
+  padding-top: 20px;
+  text-align: center;
   font-weight: 600;
 }
 

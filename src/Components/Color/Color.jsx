@@ -2,8 +2,10 @@ import ColorForm from "../ColorForm/ColorForm";
 import "./Color.css";
 import { useState } from "react";
 import CopyToClipboard from "../CopyToClipboard/CopyToClipboard";
+import ContrastChecker from "../ContrastChecker/ContrastChecker";
 
 export default function Color({
+  key,
   id,
   color,
   role,
@@ -25,6 +27,7 @@ export default function Color({
     >
       <h2 className="color-card-headline">{color}</h2>
       <CopyToClipboard value={color} />
+      <ContrastChecker color={color} contrastColor={contrast} />
       <p className="color-card-role">{role}</p>
       <p>contrast: {contrast}</p>
       {!showDelete && (
